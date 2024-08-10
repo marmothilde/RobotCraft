@@ -23,6 +23,7 @@ import net.polycule.robotcraft.event.RobotCraftEventHandler;
 
 import org.slf4j.Logger;
 
+
 import net.minecraft.resources.ResourceLocation;
 
 import net.minecraft.world.entity.EntityType;
@@ -34,7 +35,7 @@ public class RobotCraft
     // Define mod id in a common place for everything to reference
     public static final String MODID = "robotcraft";
     // Directly reference a slf4j logger
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
     // Create a Deferred Register to hold Blocks which will all be registered under the "robotcraft" namespace
 
     public static final DeferredRegister<EntityType<?>> ENTITES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, MODID);
