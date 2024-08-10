@@ -4,6 +4,7 @@ import net.minecraft.client.renderer.entity.IronGolemRenderer;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.polycule.robotcraft.RobotCraft;
+import net.polycule.robotcraft.renderer.RobotRenderer;
 
 public class RobotCraftClientEventHandler {
     
@@ -13,6 +14,6 @@ public class RobotCraftClientEventHandler {
 	}
 	
 	private static void registerEntityRenders(final EntityRenderersEvent.RegisterRenderers event) {
-		event.registerEntityRenderer(RobotCraft.ROBOT.get(), IronGolemRenderer::new);
+		event.registerEntityRenderer(RobotCraft.ROBOT.get(), RobotRenderer::new);
 	}
 }

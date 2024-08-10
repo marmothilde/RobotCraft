@@ -1,9 +1,10 @@
 package net.polycule.robotcraft.event;
 
-import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+
 import net.polycule.robotcraft.RobotCraft;
+import net.polycule.robotcraft.entities.Robot;
 
 public class RobotCraftEventHandler {
 
@@ -11,8 +12,8 @@ public class RobotCraftEventHandler {
 		
 		modBus.addListener(RobotCraftEventHandler::addAttributes);
 	}
-		
+
 	public static void addAttributes(EntityAttributeCreationEvent event) {
-		event.put(RobotCraft.ROBOT.get(), IronGolem.createAttributes().build());
+		event.put(RobotCraft.ROBOT.get(), Robot.createAttributes().build());
 	}
 }
