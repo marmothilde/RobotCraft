@@ -1,3 +1,6 @@
+# VScode
+.vscode
+
 # eclipse
 bin
 *.launch
@@ -20,6 +23,7 @@ build
 # other
 eclipse
 run
+*.properties
 
 # Files from Forge MDK
 forge*changelog.txt
