@@ -5,15 +5,9 @@ import org.slf4j.Logger;
 import com.mojang.logging.LogUtils;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.entity.animal.IronGolem;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -29,6 +23,7 @@ import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.polycule.robotcraft.entities.Robot;
 import net.polycule.robotcraft.event.RobotCraftClientEventHandler;
 import net.polycule.robotcraft.event.RobotCraftEventHandler;
 import net.polycule.robotcraft.items.RobotCraftItems;
@@ -44,9 +39,7 @@ public class RobotCraft {
 
 	public static final DeferredRegister<EntityType<?>> ENTITES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, MODID);
 
-	public static final RegistryObject<EntityType<IronGolem>> ROBOT = ENTITES.register("robot", () -> EntityType.Builder.<IronGolem>of(IronGolem::new, MobCategory.MISC).sized(1.0F, 2.0F).clientTrackingRange(10).build((new ResourceLocation(MODID, "robot")).toString()));
-
-
+	public static final RegistryObject<EntityType<Robot>> ROBOT = ENTITES.register("robot", () -> EntityType.Builder.<Robot>of(Robot::new, MobCategory.MISC).sized(1.0F, 2.0F).clientTrackingRange(10).build((new ResourceLocation(MODID, "robot")).toString()));
 
 	public RobotCraft() {
 		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
